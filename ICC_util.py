@@ -37,7 +37,9 @@ def ICC_full(test_type, results_folder):
     df = pd.read_csv(f'{testing_dirpath}/results_scan.csv')
     
     ICCs = get_iccs_by_dataframe(df)
+    #Put ICC values in testing folder
     ICCs.to_csv(testing_dirpath + f'/ICC_{test_type}.csv', index = False)
-    #return ICCs
+    return ICCs
 
-k = ICC_full('balance', 'balance_eyes_open_sparta_2021-02-24')
+#Example
+#ICC metrics = ICC_full('balance', 'balance_test_folder')
